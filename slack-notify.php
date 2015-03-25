@@ -19,7 +19,7 @@ assert( $file->fwrite($ip_address_now) );
 
 if( trim( $old_ip_address ) != trim( $ip_address_now ) ){
 	$payload['text'] = 'IP address has changed from ' . $old_ip_address . ' to ' . $ip_address_now;
-	$payload['channel'] = '@'. getenv('USER');
+	$payload['channel'] = '@' . ( ! empty(getenv('SLACK_USER') ) ? getenv('SLACK_USER') : getenv('USER'));
 	$payload['username'] = 'computer-bot';
 	$payload['icon_emoji'] = ':computer:';
 
