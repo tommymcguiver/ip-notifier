@@ -1,3 +1,4 @@
+#!/usr/local/bin/php
 <?php
 
 $ip_address_now = json_decode( file_get_contents( 'http://httpbin.org/ip') )->origin;
